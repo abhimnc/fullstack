@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: quickshare-backend
+    ports:
+      - "8000:8000"
+    networks:
+      - qshare-net
+
+  frontend:
+    build: ./frontend
+    container_name: quickshare-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - qshare-net
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: quickshare
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - qshare-net
+
+volumes:
+  pgdata:
+
+networks:
+  qshare-net:
+    driver: bridge
