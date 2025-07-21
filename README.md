@@ -13,8 +13,36 @@ Built with FastAPI + Next.js + TipTap Editor.
 - Pagination + diff viewer (Stretch)
 - Rate limits + tests
 
-
-<pre> quickshare/ ├── README.md # Project overview and instructions ├── docker-compose.yml # Docker multi-container configuration ├── frontend/ # Frontend application (Next.js) │ ├── Dockerfile # Frontend Docker config │ ├── next.config.js # Next.js configuration │ ├── .dockerignore # Ignore rules for Docker build context │ ├── package.json # Frontend dependencies and scripts │ ├── styles/ # CSS/SCSS styles │ └── pages/ # Next.js pages │ ├── editor.tsx # Document editor page │ ├── api/ # API route handlers │ │ ├── get.ts │ │ ├── create.ts │ │ ├── update.ts │ │ └── doc/ │ │ └── [short_id].ts │ └── d/ │ ├── [short_id].tsx │ └── [short_id]/ │ └── [creatorHash].tsx ├── backend/ # Backend application (Python/FastAPI) │ ├── db.py # Database schema/operations │ ├── requirements.txt # Python dependencies │ ├── Dockerfile # Backend Docker config │ ├── .env # Environment variables (excluded from version control) │ └── main.py # API entrypoint └── .git/ # Git metadata (hidden folder) </pre>
+```
+quickshare/
+├── README.md                  # Project overview and instructions
+├── docker-compose.yml         # Docker multi-container configuration
+├── frontend/                  # Frontend application (Next.js)
+│   ├── Dockerfile             # Frontend Docker config
+│   ├── next.config.js         # Next.js configuration
+│   ├── .dockerignore          # Ignore rules for Docker build context
+│   ├── package.json           # Frontend dependencies and scripts
+│   ├── styles/                # CSS/SCSS styles
+│   └── pages/                 # Next.js pages
+│       ├── editor.tsx         # Document editor page
+│       ├── api/               # API route handlers
+│       │   ├── get.ts
+│       │   ├── create.ts
+│       │   ├── update.ts
+│       │   └── doc/
+│       │       └── [short_id].ts
+│       └── d/
+│           ├── [short_id].tsx
+│           └── [short_id]/
+│               └── [creatorHash].tsx
+├── backend/                   # Backend application (Python/FastAPI)
+│   ├── db.py                  # Database schema/operations
+│   ├── requirements.txt       # Python dependencies
+│   ├── Dockerfile             # Backend Docker config
+│   ├── .env                   # Environment variables (excluded from version control)
+│   └── main.py                # API entrypoint
+└── .git/                      # Git metadata (hidden folder)
+```
 
 
 ## 📦 Tech Stack
